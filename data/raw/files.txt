@@ -1,0 +1,17 @@
+"https://www.encodeproject.org/metadata/?files.file_type=fastq&type=Experiment&%40id=%2Fexperiments%2FENCSR921ERP%2F&files.output_type=reads&files.output_category=raw+data"
+https://www.encodeproject.org/files/ENCFF044QUQ/@@download/ENCFF044QUQ.fastq.gz
+https://www.encodeproject.org/files/ENCFF454WMC/@@download/ENCFF454WMC.fastq.gz
+https://www.encodeproject.org/files/ENCFF995QNE/@@download/ENCFF995QNE.fastq.gz
+https://www.encodeproject.org/files/ENCFF125DVB/@@download/ENCFF125DVB.fastq.gz
+https://www.encodeproject.org/files/ENCFF571YOT/@@download/ENCFF571YOT.fastq.gz
+https://www.encodeproject.org/files/ENCFF441YGQ/@@download/ENCFF441YGQ.fastq.gz
+https://www.encodeproject.org/files/ENCFF406AMF/@@download/ENCFF406AMF.fastq.gz
+https://www.encodeproject.org/files/ENCFF183UJY/@@download/ENCFF183UJY.fastq.gz
+https://www.encodeproject.org/files/ENCFF598BQY/@@download/ENCFF598BQY.fastq.gz
+https://www.encodeproject.org/files/ENCFF496JHX/@@download/ENCFF496JHX.fastq.gz
+https://www.encodeproject.org/files/ENCFF103DVR/@@download/ENCFF103DVR.fastq.gz
+https://www.encodeproject.org/files/ENCFF591HEE/@@download/ENCFF591HEE.fastq.gz
+https://www.encodeproject.org/files/ENCFF441SXK/@@download/ENCFF441SXK.fastq.gz
+https://www.encodeproject.org/files/ENCFF827VZG/@@download/ENCFF827VZG.fastq.gz
+https://www.encodeproject.org/files/ENCFF251QAS/@@download/ENCFF251QAS.fastq.gz
+https://www.encodeproject.org/files/ENCFF785NZO/@@download/ENCFF785NZO.fastq.gz
