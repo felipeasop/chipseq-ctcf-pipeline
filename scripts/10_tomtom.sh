@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-# 10_tomtom.sh — Comparação dos motivos com o banco JASPAR 2024
+# 10_tomtom.sh — Comparação dos motivos descobertos com JASPAR
 # Ferramenta: TOMTOM (MEME Suite 5.5.9)
 #
 set -euo pipefail
-source ~/Projetos/chipseq-analysis/scripts/00_config.sh
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$SCRIPT_DIR/00_config.sh"
 
 LOG=$LOGS/10_tomtom.log
 exec > >(tee -a "$LOG") 2>&1

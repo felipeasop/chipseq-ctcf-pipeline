@@ -4,7 +4,8 @@
 # Ferramenta: BEDTools 2.31.1
 #
 set -euo pipefail
-source ~/Projetos/chipseq-analysis/scripts/00_config.sh
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$SCRIPT_DIR/00_config.sh"
 
 LOG=$LOGS/07_sequences.log
 exec > >(tee -a "$LOG") 2>&1

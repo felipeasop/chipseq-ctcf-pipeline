@@ -1,5 +1,10 @@
 #!/bin/bash
-source ~/Projetos/chipseq-analysis/scripts/00_config.sh
+#
+# 09_stratify.sh
+# Ferramentas: MEME 5.5.9, STREME 5.5.9
+#
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$SCRIPT_DIR/00_config.sh"
 
 LOG=$LOGS/09_stratify.log
 exec > >(tee -a "$LOG") 2>&1

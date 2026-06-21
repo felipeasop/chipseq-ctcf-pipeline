@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-source ~/Projetos/chipseq-analysis/scripts/00_config.sh
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+source "$SCRIPT_DIR/00_config.sh"
 
 mkdir -p "$DATA_RAW" "$DATA_RAW/ctrl"
 
@@ -12,7 +13,7 @@ download_one() {
     local acc
     acc=$(basename "$outpath" .fastq.gz)
 
-    if [ -f "$outpath" ]; then
+    if [ -s "$outpath" ]; then
         echo "Já existe: $outpath"
         return 0
     fi
