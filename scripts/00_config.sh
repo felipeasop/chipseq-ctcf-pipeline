@@ -15,8 +15,8 @@ LOGS=$BASE_DIR/logs
 # ChIP = reads de imunoprecipitação com anticorpo anti-CTCF
 # Control = reads de input (sem anticorpo)
 
-# Arquivos ChIP: 16 réplicas biológicas 1 do CTCF (ENCSR921ERP)
-# Biblioteca ENCLB483NAC (réplica técnica 1) + ENCLB214ERW (réplica técnica 2)
+# Arquivos ChIP do experimento ENCSR921ERP (CTCF em Calu-3)
+# Bibliotecas ENCLB483NAC e ENCLB214ERW
 CHIP_FILES=(
     $DATA_RAW/ENCFF044QUQ.fastq.gz
     $DATA_RAW/ENCFF454WMC.fastq.gz
