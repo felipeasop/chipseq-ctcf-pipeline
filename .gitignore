@@ -1,15 +1,33 @@
-# Dados brutos e genoma (muito grandes)
+# Raw Data
 data/raw/*.fastq.gz
 data/trimmed/*.fq.gz
+data/trimmed/*.json
+data/trimmed/*.txt
+
+# Genoma
 genome/*.fa
 genome/*.fa.fai
 genome/*.gz
 genome/index/
+genome/*.sizes
 
-# Resultados binários
+# Binary results
 results/alignment/*.bam
 results/alignment/*.bai
+results/peaks/*.fa
+results/peaks/*.narrowPeak
+results/peaks/*.bed
+results/peaks/*.xls
+results/peaks/*.r
+results/motifs/
+results/tomtom/
+results/fastqc/
+results/artigo/
 
-# Temporários e logs desnecessários
+# Execution logs
+logs/
+
+# Temp files
 tmp/
 *.out
+bib.bib
