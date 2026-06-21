@@ -10,6 +10,8 @@ GENOME_FA=$BASE_DIR/genome/Homo_sapiens.GRCh38.dna.primary_assembly.fa
 GENOME_SIZES=$BASE_DIR/genome/GRCh38.chrom.sizes
 RESULTS=$BASE_DIR/results
 LOGS=$BASE_DIR/logs
+TABLES=$RESULTS/tables
+QC_SUMMARY=$LOGS/qc_summary
 
 # https://www.encodeproject.org/experiments/ENCSR921ERP/
 # ChIP = reads de imunoprecipitação com anticorpo anti-CTCF

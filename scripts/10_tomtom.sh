@@ -60,11 +60,11 @@ run_tomtom() {
             $2, $4, $5, $6}' $OUTDIR/tomtom.tsv
         awk -v label="$LABEL" 'NR==2 {
             print label","$2","$4","$5","$6
-        }' $OUTDIR/tomtom.tsv >> $LOGS/tomtom_comparison.csv
+        }' $OUTDIR/tomtom.tsv >> $TABLES/tomtom_comparison.csv
     fi
 }
 
-echo "experimento,tf_match,pvalue,evalue,qvalue" > $LOGS/tomtom_comparison.csv
+echo "experimento,tf_match,pvalue,evalue,qvalue" > $TABLES/tomtom_comparison.csv
 
 run_tomtom "meme_oops"        $MOTIFS/meme_oops/meme.txt
 run_tomtom "meme_oops_markov" $MOTIFS/meme_oops_markov/meme.txt
@@ -86,8 +86,8 @@ while IFS=',' read -r label tf pval eval qval; do
     [ "$label" = "experimento" ] && continue
     printf "%-25s | %-10s | %-12s | %-12s | %-12s\n" \
         "$label" "$tf" "$pval" "$eval" "$qval"
-done < $LOGS/tomtom_comparison.csv
+done < $TABLES/tomtom_comparison.csv
 
 echo ""
-echo "  CSV completo: $LOGS/tomtom_comparison.csv"
+echo "  CSV completo: $TABLES/tomtom_comparison.csv"
 echo "[$(date)] ETAPA 10 CONCLUÍDA"

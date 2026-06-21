@@ -1,11 +1,22 @@
-# Raw data
+# Raw and intermediate data
+!data/raw/
+!data/raw/files.txt
+!data/raw/metadata
+
+# FASTQs
 data/raw/*.fastq.gz
 data/raw/*.fq.gz
+
+# Trimming
 data/trimmed/
+
+# Genomic reference
 genome/
+
+# Temp files
 tmp/
 
-# Binary results
+# Large pipeline outputs
 results/alignment/
 results/fastqc/
 results/motifs/
@@ -15,13 +26,38 @@ results/tomtom/
 # Execution logs
 logs/*.log
 logs/*.out
-scripts/pipeline_geral.out
-*.out
-*.log
 
-# IDE and code editor files
+# Generic bioinformatics outputs
+*.bam
+*.bai
+*.sam
+
+*.fa
+*.fasta
+*.fai
+
+*.narrowPeak
+*.bed
+
+*.html
+*.xml
+*.zip
+
+# REMOVER ESTA LINHA
+# *.gz
+
+# IDE / OS
 .DS_Store
 Thumbs.db
+
 .vscode/
-.zed/
 .idea/
+.zed/
+
+# Final tables
+!results/tables/
+!results/tables/*.csv
+
+# QC summary
+!logs/qc_summary/
+!logs/qc_summary/*.txt
