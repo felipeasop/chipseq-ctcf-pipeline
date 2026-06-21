@@ -1,63 +1,49 @@
-# Raw and intermediate data
-!data/raw/
-!data/raw/files.txt
-!data/raw/metadata
-
-# FASTQs
+# Raw data, genome, temp files
 data/raw/*.fastq.gz
 data/raw/*.fq.gz
-
-# Trimming
 data/trimmed/
-
-# Genomic reference
 genome/
-
-# Temp files
 tmp/
 
-# Large pipeline outputs
+# Pipeline outputs
 results/alignment/
 results/fastqc/
-results/motifs/
-results/peaks/
-results/tomtom/
 
-# Execution logs
+# Keeping important results
+results/peaks/*
+!results/peaks/background_markov.txt
+
+# Logs
 logs/*.log
 logs/*.out
+*.out
+*.log
 
-# Generic bioinformatics outputs
+# Generic bioinformatic outputs
 *.bam
 *.bai
 *.sam
-
 *.fa
 *.fasta
 *.fai
-
 *.narrowPeak
 *.bed
-
 *.html
 *.xml
 *.zip
 
-# REMOVER ESTA LINHA
-# *.gz
+# Motifs & Tomtom
+results/motifs/*/meme.txt
+results/motifs/*/streme.txt
+results/motifs/*/sequences.tsv
+results/motifs/*/sites.tsv
 
-# IDE / OS
+# Jaspar
+results/tomtom/JASPAR2024_CORE_non-redundant_pfms_meme.txt
+
+# IDE & OS
 .DS_Store
 Thumbs.db
-
 .vscode/
 .idea/
 .zed/
-
-# Final tables
-!results/tables/
-!results/tables/*.csv
-
-# QC summary
-!logs/qc_summary/
-!logs/qc_summary/*.txt
