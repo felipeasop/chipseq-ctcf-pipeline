@@ -1,0 +1,10 @@
+Query_ID	Target_ID	Optimal_offset	p-value	E-value	q-value	Overlap	Query_consensus	Target_consensus	Orientation
+CNNBRSYGCCMYCTRSTGG	MA0139.2	-5	1.43452e-12	3.36539e-09	6.73078e-09	14	CTCTAGCGCCCCCTGGTGG	GCGCCCCCTGGTGGC	-
+CNNBRSYGCCMYCTRSTGG	MA1930.2	-5	3.12708e-07	0.000733614	0.000733614	14	CTCTAGCGCCCCCTGGTGG	GCGCCCCCTAGTGGCCAGAAGGGGGAACTGCAG	-
+CNNBRSYGCCMYCTRSTGG	MA1929.2	-6	6.70773e-06	0.0157363	0.0104909	13	CTCTAGCGCCCCCTGGTGG	CGCCCCCTGGTGGCCACAGCTGGAACTGCAG	-
+CNNBRSYGCCMYCTRSTGG	MA0531.2	-5	1.32933e-05	0.031186	0.015593	10	CTCTAGCGCCCCCTGGTGG	GCGCCATCTA	-
+CNNBRSYGCCMYCTRSTGG	MA1102.3	-7	2.75627e-05	0.0646622	0.0258649	8	CTCTAGCGCCCCCTGGTGG	GCCCCCTG	-
+
+# Tomtom (Motif Comparison Tool): Version 5.5.9 compiled on May 27 2026 at 12:41:21
+# The format of this file is described at https://meme-suite.org/meme/doc/tomtom-output-format.html.
+# tomtom -o /home/flp/Projetos/chipseq-analysis/results/tomtom/meme_oops -no-ssc -verbosity 1 -min-overlap 5 -dist pearson -thresh 0.05 /home/flp/Projetos/chipseq-analysis/results/motifs/meme_oops/meme.txt /home/flp/Projetos/chipseq-analysis/results/tomtom/JASPAR2024_CORE_non-redundant_pfms_meme.txt
