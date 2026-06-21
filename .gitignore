@@ -1,0 +1,15 @@
+# Dados brutos e genoma (muito grandes)
+data/raw/*.fastq.gz
+data/trimmed/*.fq.gz
+genome/*.fa
+genome/*.fa.fai
+genome/*.gz
+genome/index/
+
+# Resultados binários
+results/alignment/*.bam
+results/alignment/*.bai
+
+# Temporários e logs desnecessários
+tmp/
+*.out
