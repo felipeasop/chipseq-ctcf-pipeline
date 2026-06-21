@@ -132,21 +132,70 @@ Raw FASTQs (ENCODE)
 
 ```
 .
-├── environment.yml       # Pinned conda/micromamba environment
-├── scripts/
-│   ├── 00_config.sh      # Central configuration (paths, parameters)
-│   ├── 01_download.sh    # ENCODE FASTQ download
-│   ├── 02_qc.sh          # Quality control and trimming
-│   ├── 03_index_genome.sh# Genome indexing
-│   ├── 04_align.sh       # Read alignment
-│   ├── 05_dedup.sh       # Duplicate marking
-│   ├── 06_peaks.sh       # Peak calling
-│   ├── 07_sequences.sh   # Sequence extraction
-│   ├── 08_motifs.sh      # Motif discovery (OOPS, ZOOPS, STREME)
-│   ├── 09_stratify.sh    # Peak stratification analysis
-│   └── 10_tomtom.sh      # TOMTOM vs JASPAR comparison
+├── data/
+│   └── raw/
+│       ├── files.txt
+│       └── metadata
+├── environment.yml   
+├── latex/            
+│   ├── bibliography.bib
+│   └── main.tex
 ├── LICENSE
-└── README.md
+├── logs/
+│   └── qc_summary/   
+│       ├── chip_bowtie2_stats.txt
+│       ├── chip_flagstat.txt
+│       ├── chip_picard_metrics.txt
+│       ├── ctrl_bowtie2_stats.txt
+│       ├── ctrl_flagstat.txt
+│       └── ctrl_picard_metrics.txt
+├── README.md
+├── results/
+│   ├── motifs/  
+│   │   ├── meme_oops/
+│   │   │   ├── logo1.eps
+│   │   │   └── logo_rc1.eps
+│   │   ├── meme_oops_markov/
+│   │   │   ├── logo1.eps
+│   │   │   └── logo_rc1.eps
+│   │   └── meme_zoops/
+│   │       ├── logo1.eps
+│   │       └── logo_rc1.eps
+│   ├── peaks/
+│   │   └── background_markov.txt  
+│   ├── tables/        
+│   │   ├── motif_summary.csv
+│   │   ├── stratification_results.csv
+│   │   └── tomtom_comparison.csv
+│   └── tomtom/         
+│       ├── meme_oops/
+│       │   └── tomtom.tsv
+│       ├── meme_oops_markov/
+│       │   └── tomtom.tsv
+│       ├── meme_zoops/
+│       │   └── tomtom.tsv
+│       ├── streme/
+│       │   └── tomtom.tsv
+│       ├── streme_top10/
+│       │   └── tomtom.tsv
+│       ├── streme_top25/
+│       │   └── tomtom.tsv
+│       ├── streme_top50/
+│       │   └── tomtom.tsv
+│       └── tomtom.tsv
+└── scripts/           
+    ├── 00_config.sh
+    ├── 01_download.sh
+    ├── 02_qc.sh
+    ├── 03_index_genome.sh
+    ├── 04_align.sh
+    ├── 05_dedup.sh
+    ├── 06_peaks.sh
+    ├── 07_sequences.sh
+    ├── 08_motifs.sh
+    ├── 09_stratify.sh
+    ├── 10_tomtom.sh
+    └── run_pipeline.sh 
 ```
 
 > **Note on data files:** raw FASTQ files, the reference genome and its
