@@ -1,0 +1,8 @@
+experiment,tool,model,background,motif_consensus,width,evalue
+meme_oops,MEME,OOPS,uniform,CNNBRSYGCCMYCTRSTGG,19,4.6e-590
+meme_oops_markov,MEME,OOPS,markov2,YNNBRSYGCCMYCTRSTGG,19,3.4e-566
+meme_zoops,MEME,ZOOPS,markov2,YNRCCASYAGRKGGCRSYV,19,1.1e-612
+streme,STREME,ZOOPS-native(top1),markov2,CCASYAGRKGGCRSYVNN,18,1.8e-933
+streme_top10,STREME,ZOOPS-native(top1),markov2,CCASCAGRKGGCRSYVBNGV,20,5.1e-163
+streme_top25,STREME,ZOOPS-native(top1),markov2,CCASYAGRKGGCRSYVBNG,19,3.8e-380
+streme_top50,STREME,ZOOPS-native(top1),markov2,CCASYAGRKGGCRSYVBNG,19,5.9e-697
