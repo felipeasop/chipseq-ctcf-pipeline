@@ -6,7 +6,7 @@ of motif discovery models (OOPS, ZOOPS, STREME) applied to CTCF data.
 Companion code for the paper:
 > **Benchmarking Motif Discovery Models for Human ChIP-seq Data:
 > OOPS, ZOOPS, and STREME Applied to CTCF**
-> Submitted to BRACIS/ENIAC 2026.
+> Submitted to BRACIS/ENIAC 2026 (anonymous submission).
 
 ---
 
@@ -20,7 +20,7 @@ Companion code for the paper:
 | Platform | Illumina NextSeq 500 |
 | Read type | SE76 (76-nt single-end) |
 | ChIP libraries | ENCLB483NAC, ENCLB214ERW (16 FASTQ files) |
-| Control libraries | ENCLB030UCW, ENCLB489EVC (20 FASTQ files) |
+| Control libraries | ENCLB030UCW, ENCLB489EVC (20 FASTQ files, ENCSR871UJG) |
 | Reference genome | GRCh38 (Ensembl release 112) |
 
 ---
@@ -38,13 +38,16 @@ Companion code for the paper:
 | BEDTools | 2.31.1 |
 | MEME Suite (MEME/STREME/TOMTOM) | 5.5.9 |
 
+All versions are pinned in `environment.yml`.
+
 ---
 
 ## Requirements
 
-- Linux (tested on CachyOS / kernel 7.0.11)
-- [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
-- ~150 GB disk space (raw data + genome + results)
+- Linux (tested on Fedora and CachyOS)
+- [micromamba](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html) (or conda/mamba)
+- ~80 GB free disk space (raw FASTQ downloads, reference genome + Bowtie2
+  index, BAM files, and intermediate results)
 
 ---
 
@@ -52,23 +55,25 @@ Companion code for the paper:
 
 ```bash
 # 1. Clone the repository
-git clone git@github.com:felipeasop/chipseq-ctcf-pipeline.git
+git clone <repository-url>
 cd chipseq-ctcf-pipeline
 
 # 2. Create and activate the environment
 micromamba env create -f environment.yml
 micromamba activate chipseq
 
-# 3. Edit the base directory in the config script
-nano scripts/00_config.sh   # set BASE_DIR to your local path
+# 3. Edit the base directory and review file accessions
+nano scripts/00_config.sh   # set BASE_DIR to your local path;
+                            # confirm CHIP_FILES / CTRL_FILES match
+                            # the files retrieved in step 01
 ```
 
 ---
 
 ## Running the Pipeline
 
-Each script corresponds to one analysis step and can be run independently
-or in sequence:
+Each script corresponds to one analysis step and should be run in order
+the first time (later steps depend on the outputs of earlier ones):
 
 ```bash
 bash scripts/01_download.sh     # Download FASTQ files from ENCODE
@@ -115,8 +120,9 @@ Raw FASTQs (ENCODE)
 | Minimum MAPQ | 30 | `04_align.sh` |
 | Peak FDR threshold | q ≤ 0.01 | `06_peaks.sh` |
 | Summit extension | ±100 bp | `07_sequences.sh` |
-| Motif width | 19 nt | `08_motifs.sh` |
-| Background model | Markov order-1 (`fasta-get-markov`) | `08_motifs.sh` |
+| Motif width (MEME, Exp. A–C) | 19 nt (fixed) | `08_motifs.sh` |
+| Motif width (STREME, Exp. D) | 15–21 nt (range) | `08_motifs.sh` |
+| Background model | Markov order-2 (`fasta-get-markov -m 2`) | `08_motifs.sh` |
 | TOMTOM distance | Pearson correlation | `10_tomtom.sh` |
 | JASPAR database | 2024 CORE non-redundant | `10_tomtom.sh` |
 
@@ -139,8 +145,15 @@ Raw FASTQs (ENCODE)
 │   ├── 08_motifs.sh      # Motif discovery (OOPS, ZOOPS, STREME)
 │   ├── 09_stratify.sh    # Peak stratification analysis
 │   └── 10_tomtom.sh      # TOMTOM vs JASPAR comparison
+├── LICENSE
 └── README.md
 ```
+
+> **Note on data files:** raw FASTQ files, the reference genome and its
+> Bowtie2 index, BAM/SAM files, and pipeline outputs (`data/`, `genome/`,
+> `results/`, `logs/`) are not version-controlled due to their size. They
+> are regenerated locally by running scripts `01` through `10` in
+> sequence, as described above.
 
 ---
 
