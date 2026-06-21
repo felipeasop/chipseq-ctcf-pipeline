@@ -1,33 +1,27 @@
-# Raw Data
+# Raw data
 data/raw/*.fastq.gz
-data/trimmed/*.fq.gz
-data/trimmed/*.json
-data/trimmed/*.txt
-
-# Genoma
-genome/*.fa
-genome/*.fa.fai
-genome/*.gz
-genome/index/
-genome/*.sizes
+data/raw/*.fq.gz
+data/trimmed/
+genome/
+tmp/
 
 # Binary results
-results/alignment/*.bam
-results/alignment/*.bai
-results/peaks/*.fa
-results/peaks/*.narrowPeak
-results/peaks/*.bed
-results/peaks/*.xls
-results/peaks/*.r
-results/motifs/
-results/tomtom/
+results/alignment/
 results/fastqc/
-results/artigo/
+results/motifs/
+results/peaks/
+results/tomtom/
 
 # Execution logs
-logs/
-
-# Temp files
-tmp/
+logs/*.log
+logs/*.out
+scripts/pipeline_geral.out
 *.out
-bib.bib
+*.log
+
+# IDE and code editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.zed/
+.idea/
