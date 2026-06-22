@@ -6,7 +6,7 @@ of motif discovery models (OOPS, ZOOPS, STREME) applied to CTCF data.
 Companion code for the paper:
 > **Benchmarking Motif Discovery Models for Human ChIP-seq Data:
 > OOPS, ZOOPS, and STREME Applied to CTCF**
-> Submitted to BRACIS/ENIAC 2026 (anonymous submission).
+> Companion code for the submitted manuscript.
 
 ---
 
